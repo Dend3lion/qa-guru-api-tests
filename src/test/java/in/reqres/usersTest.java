@@ -46,9 +46,9 @@ public class usersTest {
             .log().status()
             .log().body()
             .statusCode(200)
-            .body("page", is("1"))
-            .body("total", is("12"))
-            .body("data.id", is("1"));
+            .body("page", is(1))
+            .body("total", is(12))
+            .body("data[0].id", is(1));
     }
     @Test
     void validListPageUsers() {
@@ -61,9 +61,9 @@ public class usersTest {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .body("page", is("2"))
-                .body("total", is("12"))
-                .body("data.id", is("7"));
+                .body("page", is(2))
+                .body("total", is(12))
+                .body("data[0].id", is(7));
     }
 
     @Test
